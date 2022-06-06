@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
 .login{
     align-self: center;
     background: #FFFFFF;
@@ -6,4 +8,59 @@
     height: 650px;
     margin: auto;
     margin-top: 30px;
+}
+.formulario{
+    width: 454px;
+    height: 441px;
+    margin-left: 45px;
+    margin-top: 105px;
+}
+.input{
+
+    width: 454px;
+    height: 53px;
+    margin-left: 0px;
+    margin-top: 0px;
+    border: none;
+
+    background: #F0F0F0;
+}
+.texto{
+    width: 260px;
+    height: auto;
+    margin-left: 0px;
+    margin-top: 23px;
+    margin-bottom: 6px;
+    color: #A2A2A2;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 12px;
+}
+.texto1{
+
+    width: 293px;
+    height: 32px;
+    margin-left: 83px;
+    margin-top: 17px;
+
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 16px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    color: #4D7679;
+
+}
+.imagen{
+
+    width: 547px;
+    height: 493px;
+    margin-left: 0px;
+    margin-top: 79px;
 }
