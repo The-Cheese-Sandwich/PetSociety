@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .login{
     align-self: center;
@@ -7,7 +7,7 @@
     width: 1100px;
     height: 650px;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 200px;
 }
 .formulario{
     width: 454px;
@@ -24,7 +24,45 @@
     border: none;
 
     background: #F0F0F0;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 25px;
+    padding-left: 20px;
+
 }
+
+.input1{
+
+    width: 404px;
+    height: 53px;
+    margin-left: 0px;
+    margin-top: 0px;
+    border: none;
+
+    background: #F0F0F0;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 25px;
+    padding-left: 20px;
+}
+
+.imagen1{
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 11.5px;
+}
+
+.pass{
+    display: inline-flex;
+    width: 454px;
+    height: 53px;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
 .texto{
     width: 260px;
     height: auto;
@@ -46,7 +84,7 @@
     margin-top: 17px;
 
     font-family: 'Roboto';
-    font-weight: bold;
+    font-weight: 700;
     font-size: 16px;
 
     display: flex;
@@ -54,13 +92,48 @@
     text-align: center;
     justify-content: center;
 
-    color: #4D7679;
-
+    color: #14858d;
 }
 .imagen{
 
     width: 547px;
     height: 493px;
-    margin-left: 0px;
+    margin-left: -10px;
     margin-top: 79px;
+    border-right: 1px solid #A2A2A2;
+}
+.boton1{
+    width: 343px;
+    height: 52px;
+    margin-left: 56px;
+    margin-top: 31px;
+    background: #25AFAC;
+    border: 2px solid #25AFAC;
+    border-radius: 6px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.boton2{
+    width: 343px;
+    height: 52px;
+    margin-left: 55px;
+    margin-top: 50px;
+
+    background: #F09300;
+    border: 2px solid #F09300;
+    border-radius: 6px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
