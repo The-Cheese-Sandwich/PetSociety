@@ -1,0 +1,20 @@
+.wraper {
+    width: 100%;
+    margin: auto; /* Centramos los elementos */
+    overflow: hidden; /* Eliminamos errores de float */
+    padding-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+div nav {
+  
+    display: inline-block;
+    line-height: 50px;
+    font-family: 'Teko';
+    margin: 35px;
+    width: 250px;
+    height: auto;
+    padding: 1px;
+}

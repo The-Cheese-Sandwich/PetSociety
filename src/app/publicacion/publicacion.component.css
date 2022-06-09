@@ -1,10 +1,10 @@
 
 .container_publicacion{  
     width: 373px;
-    height: 533px;
+    height: auto;
     background: #FFFFFF;
     border-radius: 20px;
-    border: 1px solid #000000;
+    border: 1px solid #8d8d8d;
 }
 .publicacion_profile{
     margin-left: 15px;
@@ -13,7 +13,7 @@
     width: 50px;
     height: 50px;
 }
-.publicacion_title{
+.username{
     position: absolute;
     width: 250px;
     height: 30px;
@@ -34,6 +34,7 @@
 }
 .publicacion_descripcion{
     width: 330px;
+    margin-top: 5px;
     margin-left: 20px;
     height: 51px;
     font-family: 'Roboto';
@@ -66,4 +67,5 @@
     align-items: center;
     letter-spacing: 0.04em;
     color: #A2A2A2;
+    margin-bottom: 15px;
 }

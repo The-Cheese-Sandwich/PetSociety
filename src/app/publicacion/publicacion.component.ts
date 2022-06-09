@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-publicacion',
@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./publicacion.component.css']
 })
 export class PublicacionComponent implements OnInit {
+
+  @Input() userImg?: string;
+  @Input() username?: string;
+  @Input() pubImg?: string;
+  @Input() descrp?: string;
+  @Input() numComm?: string;
+
 
   constructor() { }
 
