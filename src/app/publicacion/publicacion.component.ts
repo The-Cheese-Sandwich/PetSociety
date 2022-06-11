@@ -7,12 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PublicacionComponent implements OnInit {
 
-  @Input() userImg?: string;
-  @Input() username?: string;
-  @Input() pubImg?: string;
-  @Input() descrp?: string;
-  @Input() numComm?: string;
-
+  @Input() publicacion?: any;
+  
 
   constructor() { }
 

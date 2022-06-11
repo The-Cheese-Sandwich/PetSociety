@@ -1,6 +1,11 @@
-<div class="wrapper">
-    <nav *ngFor="let publicacion of publicaciones">
-      <app-publicacion
-      ></app-publicacion>
-    </nav>
+<!--<body class="pubs" >
+  <div *ngFor="let publicacion of publicaciones">
+    <app-publicacion [publicacion]="publicacion"></app-publicacion>
   </div>
+</body> -->
+<div class="publicaciones">
+  <div *ngFor="let publicacion of publicaciones">
+    <app-publicacion [publicacion]="publicacion"></app-publicacion>
+  </div>
+</div>
+

@@ -1,1 +1,5 @@
-<p>guardados works!</p>
+<div class="publicaciones">
+    <div *ngFor="let publicacion of publicaciones">
+      <app-publicacion [publicacion]="publicacion"></app-publicacion>
+    </div>
+  </div>
