@@ -9,10 +9,12 @@
                 <input class="input" type="email" id="email" size="30" required>
                 <p class="texto">Contraseña</p>
                 <div class="pass">
-                    <input class="input1" type="password" required minlength="8">
-                    <img src=".\assets\show-eye.png" alt="" class="imagen1">
+                    <input class="input1" required minlength="8" id="password-field" [type]="show ? 'text' : 'password'" />
+                    <button (click)="password()"> <img src=".\assets\show-eye.png">
+                    </button>
+                    <!-- <img src=".\assets\show-eye.png" alt="" class="imagen1"> -->
                 </div>
-                <button class="boton1">
+                <button class="boton1" >
                     INICIAR SESIÓN
                 </button>
                 <p class="texto1">
