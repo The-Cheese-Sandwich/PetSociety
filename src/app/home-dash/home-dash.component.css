@@ -2,12 +2,15 @@
 
 
 .dash{
+    position: sticky;
     width: 606px;
-    height: 45px;
+    height: auto;
     margin: auto;
-    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: #f8f8f8;
 }
-.eleccion{
+.selected{
     width: 202px;
     height: 45px;
     justify-content: center;
@@ -23,7 +26,7 @@
     
 }
 
-.eleccion p{
+.selected p{
     margin-left: auto;
     margin-right: auto;
 
