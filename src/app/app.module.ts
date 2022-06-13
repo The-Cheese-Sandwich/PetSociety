@@ -10,6 +10,10 @@ import { LoginComponent } from './login/login.component';
 import { CrearPublicacionComponent } from './crear-publicacion/crear-publicacion.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import { PublicacionesGeneralComponent } from './publicaciones-general/publicaciones-general.component';
+import { GuardadosComponent } from './guardados/guardados.component';
+import { MisPublicacionesComponent } from './mis-publicaciones/mis-publicaciones.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +22,10 @@ import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
     DashboardComponent,
     HomeDashComponent,
     LoginComponent,
-    CrearPublicacionComponent
+    CrearPublicacionComponent,
+    PublicacionesGeneralComponent,
+    GuardadosComponent,
+    MisPublicacionesComponent
   ],
   imports: [
     BrowserModule,
