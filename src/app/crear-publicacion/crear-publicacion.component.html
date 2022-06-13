@@ -1,0 +1,26 @@
+
+<div class="container_from">
+    <div class="form_title">
+        Nueva publicación
+    </div>
+    <img (click)="close()" src="/assets/close-x.png"  class="from_close">
+    <div class="form_line"></div>
+    <img *ngIf="selectedFile=== undefined" src="/assets/no-image-selected.png"  class="form_pet_img">
+    <img *ngIf="!(selectedFile=== undefined)" src="{{selectedFile.src}}"  class="form_pet_img">
+    <img  src="/assets/imegen-perfil-defult.png"  class="form_user_img">
+    <div class="form_user_name">Nombre de usuario</div>
+    <input class="form_descipcion" type="text" placeholder="Descripcion"  maxlength="300" >
+    <label class="form_button_img">
+        <input #imageInput
+        type="file"
+        accept="image/*"
+        (change)="processFile(imageInput)"/>
+        <div class="button_img_text">Cambiar imagen</div>
+    </label>
+    
+    <div class="form_button_publicar" (click)="close()">
+        <div class="button_publicar_text">
+            Publicar
+        </div>
+    </div>
+</div>
