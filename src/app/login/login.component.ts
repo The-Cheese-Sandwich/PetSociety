@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,14 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  // variable - default false
 show: boolean = false;
+public textoemail: string="";
+public textopassword: string="";
 
 constructor() {
 }
-
-// click event function toggle
-
   password() {
     this.show = !this.show;
   }  
@@ -22,5 +21,15 @@ constructor() {
   ngOnInit(): void {
   }
 
+  validateData(){
+    if((this.textoemail.length ==0) && (this.textopassword == "") ){
+      console.log(Error)
+      return true;
+    }else{
+    console.log();
+    
+    return false;
+    }
+  }
 
 }

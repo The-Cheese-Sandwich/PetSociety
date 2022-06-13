@@ -63,7 +63,21 @@
     margin-top: 0px;
 }
 
-.texto{
+.textoemail{
+    width: 260px;
+    height: auto;
+    margin-left: 0px;
+    margin-top: 23px;
+    margin-bottom: 6px;
+    color: #A2A2A2;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 12px;
+}
+
+.textopassword{
     width: 260px;
     height: auto;
     margin-left: 0px;
