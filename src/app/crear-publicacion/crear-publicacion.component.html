@@ -15,7 +15,8 @@
         type="file"
         accept="image/*"
         (change)="processFile(imageInput)"/>
-        <div class="button_img_text">Cambiar imagen</div>
+        <div *ngIf="selectedFile=== undefined" class="button_img_text">Escoger imagen</div>
+        <div *ngIf="!(selectedFile=== undefined)" class="button_img_text">Cambiar imagen</div>
     </label>
     
     <div class="form_button_publicar" (click)="close()">
