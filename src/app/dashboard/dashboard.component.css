@@ -4,7 +4,7 @@
     height: 124px;
     margin-left: 0px;
     margin-top: 0px;
-    margin-right: 0px;
+    margin-right: auto;
 
     background: #FFFFFF;
 }
@@ -17,7 +17,7 @@
 .home{
     width: 57px;
     height: 57px;
-    margin-left: 1500px;
+    margin-left: 750px;
     margin-right: 40px;
     margin-top: 32px;
 } 

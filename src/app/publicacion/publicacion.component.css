@@ -1,6 +1,6 @@
 
 .container_publicacion{  
-    width: 500px;
+    width: 373px;
     height: auto;
     background: #FFFFFF;
     border-radius: 20px;
@@ -34,23 +34,12 @@
     letter-spacing: 0.04em;
 }
 .publicacion_img_pet{
-    width: 500px;
-    height: 500px;
-    margin-left:-497px;
+    width: 373px;
+    height: 373px;
     margin-top: 5px;
-    object-fit: cover; /* o contain*/
-    position: absolute;
+    object-fit: cover; 
+}
 
-    
-}
-.fondoImg{
-    width: 494px;
-    height: 494px;
-    margin-top: 8px;
-    margin-left: 3px;
-    object-fit: cover;
-    filter: blur(4px);
-}
 .publicacion_descripcion{
     width: auto;
     margin-top: 10px;
