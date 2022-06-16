@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ show: boolean = false;
 public textoemail: string="";
 public textopassword: string="";
 
-constructor() {
+constructor(private router: Router) {
 }
   password() {
     this.show = !this.show;
@@ -22,14 +22,8 @@ constructor() {
   }
 
   validateData(){
-    if((this.textoemail.length ==0) && (this.textopassword == "") ){
-      console.log(Error)
-      return true;
-    }else{
-    console.log();
-    
-    return false;
-    }
+
+    this.router.navigate(['dash']);
   }
 
 }
