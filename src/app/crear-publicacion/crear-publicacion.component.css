@@ -51,6 +51,7 @@
     height: 484px;
     left: 51px;
     top: 101px;
+    object-fit: cover;
 }
 .form_user_img{
     position: absolute;

@@ -2,7 +2,6 @@
 .publicaciones{
     margin: auto;
     margin-top: 40px;
-    width: 2000px;
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
