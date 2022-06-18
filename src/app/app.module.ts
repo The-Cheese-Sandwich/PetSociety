@@ -7,7 +7,7 @@ import { PublicacionComponent } from './publicacion/publicacion.component';
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HomeDashComponent } from './home-dash/home-dash.component';
 import { LoginComponent } from './login/login.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
