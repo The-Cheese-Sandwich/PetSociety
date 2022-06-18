@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
-const trabajoSchema = mongoose.Schema({
-    title: { type: String, require: true},
-    content: { type: String, require: true}
+const postSchema = mongoose.Schema({
+    //userId: { type: String, require: true},
+    image: { type: String, require: true},
+    description: { type: String, require: true}
+    
   
   });
 
