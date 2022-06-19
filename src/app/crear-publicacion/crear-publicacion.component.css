@@ -108,6 +108,7 @@
     display: flex;
     align-items: center;
     color: #A2A2A2;
+    resize: none;
 }
 .form_button_img{
     position: absolute;

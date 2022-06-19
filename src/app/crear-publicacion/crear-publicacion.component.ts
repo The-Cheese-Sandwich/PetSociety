@@ -17,9 +17,11 @@ export class CrearPublicacionComponent implements OnInit {
   descipcion : string = "";
   User_name = "NombreUser1";
   
+  
   constructor(private dialogRef: MatDialogRef<CrearPublicacionComponent> , private postService : PostsService) { }
 
   ngOnInit(): void {
+   
     
   }
   close(){
@@ -29,7 +31,7 @@ export class CrearPublicacionComponent implements OnInit {
     const file: File = imageInput.files[0];
     const reader = new FileReader();
     reader.addEventListener('load', (event: any) => {
-
+    
       this.selectedFile = new ImageSnippet(event.target.result, file);
     });
     reader.readAsDataURL(file);
