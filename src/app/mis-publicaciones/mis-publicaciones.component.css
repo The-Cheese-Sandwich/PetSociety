@@ -1,0 +1,16 @@
+
+.publicaciones{
+    margin: auto;
+    margin-top: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.pub{
+    height: 400px;
+    width: 600px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background: black;
+}
