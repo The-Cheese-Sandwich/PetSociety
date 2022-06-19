@@ -3,11 +3,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
-const Post = require('./models/post');
+const postsRoutes = require("./routes/posts");
+const userRoutes = requiere("./routes/user");
 
 const app = express();
 
-mongoose.connect("mongodb+srv://User:hAur8x7F1LqMzfqT@clusterpetsociety.syiyy.mongodb.net/petSociety?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://User:hAur8x7F1LqMzfqT@clusterpetsociety.syiyy.mongodb.net/petSociety")
   .then(() => {
   console.log('Connected to database!')
   })
@@ -33,5 +34,6 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/posts", postsRoutes);
+app.use("/api/user", userRoutes);
 
 module.exports = app;
