@@ -1,10 +1,13 @@
 <div class="dash">
-    <div style="display:inline-flex; ">
         <img src=".\assets\logo-2.png" alt="" class="logo">
-        <img src=".\assets\home-selected.png" alt="" class="home">
-        <img (click)="openModal()" src=".\assets\add-new.png" alt="" class="add">
-        <img src=".\assets\imegen-perfil-defult.png" alt="" class="perfil">
-    </div>
+        <div style="display:inline-flex; margin-left: auto; margin-right: 30px;">
+            <img src=".\assets\home-selected.png" alt="" class="icon">
+            <img (click)="openModal()" src=".\assets\add-new.png" alt="" class="icon">
+            <img src=".\assets\imegen-perfil-defult.png" alt="" class="icon">
+            <button class="cerrarsesion" (click)="logout()">Cerrar Sesión</button>
+        </div>
+
+        
 </div>
 
 <router-outlet></router-outlet>
