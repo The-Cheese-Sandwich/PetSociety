@@ -7,6 +7,7 @@ import { PublicacionComponent } from './publicacion/publicacion.component';
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HomeDashComponent } from './home-dash/home-dash.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 import { CrearPublicacionComponent } from './crear-publicacion/crear-publicacion.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
@@ -29,13 +30,15 @@ import { MisPublicacionesComponent } from './mis-publicaciones/mis-publicaciones
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
     FormsModule,
     AppRoutingModule,
     MatDialogModule,
     BrowserAnimationsModule
   ],
   providers: [
-      
+    
   ],
   bootstrap: [AppComponent]
 })
