@@ -22,5 +22,10 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
+  opbutton(){
+    var list = document.getElementsByClassName('cerrarsesion');
+    list[0].classList.toggle('hide');
+  }
+
 
 }
