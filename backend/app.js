@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -16,6 +17,7 @@ mongoose.connect("mongodb+srv://User:hAur8x7F1LqMzfqT@clusterpetsociety.syiyy.mo
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
+app.use("/images", express.static(path.join("backend/images")));
 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -30,36 +32,6 @@ app.use((req, res, next) => {
     next();
 });
 
-app.post("/api/posts", (req, res, next) => {
-    const post = new Post({
-        image: req.body.image,
-        description: req.body.description
-    });
-    post.save().then(createdPost => {
-        res.status(201).json({
-            message: 'Post added successfully',
-            id: createdPost._id
-        });
-    });
-});
-
-app.get("/api/posts",(req, res, next) => {
-   Post.find().then(documents => {
-        res.status(200).json({
-            message: 'Posts fetched succesfully',
-            posts: documents
-        });
-   });
-});
-
-app.delete("api/posts/:id", checkAuth, (req, res, next) => {
-    Post.deleteOne({
-      _id: req.params.id
-    }).then(result => {
-      console.log(result);
-      res.status(200).json({ message: "Post deleted!"});
-    })
-  });
-
+app.use("/api/posts", postsRoutes);
 
 module.exports = app;
