@@ -1,0 +1,138 @@
+.container_from{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 880px;
+    height: 635px;
+    background: #FFFFFF;
+    border-radius: 40px;
+    border: 1px solid #000000;
+}
+.form_title{
+    position: absolute;
+    width: 420px;
+    height: 45px;
+    left: 51px;
+    top: 31px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    color: #A2A2A2;
+}
+.from_close{
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    left: 787px;
+    top: 31px;
+}
+.form_line{
+    position: absolute;
+    width: 779px;
+    height: 0px;
+    left: 51px;
+    top: 76px;
+
+    border: 1px solid #A2A2A2;
+}
+.form_pet_img{
+    position: absolute;
+    width: 471px;
+    height: 484px;
+    left: 51px;
+    top: 101px;
+    object-fit: cover;
+}
+.form_user_img{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 560px;
+    top: 109px;
+}
+.form_user_name{
+    position: absolute;
+    width: 246px;
+    height: 32px;
+    left: 626px;
+    top: 123px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 12px;
+    /* or 60% */
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+.form_descipcion{
+    position: absolute;
+    width: 270px;
+    height: 250px;
+    left: 560px;
+    top: 202px; 
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 12px; 
+    display: flex;
+    align-items: center;
+    color: #A2A2A2;
+}
+.form_button_img{
+    position: absolute;
+    width: 229px;
+    height: 27px;
+    left: 580px;
+    top: 465px;
+    background: #F09300;
+    border: 2px solid #F09300;
+    border-radius: 6px;
+}
+.button_img_text{
+    margin-top: 5px;
+    text-align:center;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+.form_button_publicar{
+    position: absolute;
+    width: 252px;
+    height: 52px;
+    left: 569px;
+    top: 533px;
+    background: #25AFAC;
+    border: 2px solid #25AFAC;
+    border-radius: 6px;
+}
+.button_publicar_text{
+    margin-top: 15px;
+    text-align:center;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+input[type="file"] {
+    display: none;
+}

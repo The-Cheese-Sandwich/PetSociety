@@ -5,22 +5,25 @@
         <img src=".\assets\logo-1.png" alt="" class="imagen">
         <div class="formulario">
             <form>
-                <p class="texto">Email o Nombre de usuario</p>
-                <input class="input" type="text">
-                <p class="texto">Contraseña</p>
+                <p class="textoemail">Email o Nombre de usuario</p>
+                <input class="input" type="email" id="email" size="30" required>
+                <p class="textopassword">Contraseña</p>
                 <div class="pass">
-                    <input class="input1" type="password">
-                    <img src=".\assets\show-eye.png" alt="" class="imagen1">
+                    <input class="input1" required minlength="8" [type]="show ? 'text' : 'password'" />
+                    <button class="sendData" (click)="password()"> <img src=".\assets\show-eye.png">
+                    </button>
                 </div>
-                <button class="boton1">
-                    INICIAR SESIÓN
+                <div >
+                    <button class="boton1" (click)="validateData()">
+                        INICIAR SESIÓN
+                    </button>
+                    <p class="texto1">
+                        ¿Haz olvidado tu contraseña?
+                    </p>
+                    <button class="boton2">
+                        REGISTRAR CUENTA NUEVA
                 </button>
-                <p class="texto1">
-                    ¿Haz olvidado tu contraseña?
-                </p>
-                <button class="boton2">
-                    REGISTRAR CUENTA NUEVA
-                </button>
+                </div>
             </form>
         </div>
     </div>
