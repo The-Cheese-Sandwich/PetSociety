@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
+import { SignupComponent } from '../signup/signup.component';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,7 @@ show: boolean = false;
 public textoemail: string="";
 public textopassword: string="";
 
-constructor(private router: Router) {
+constructor(private router: Router, public dialog: MatDialog) {
 }
   password() {
     this.show = !this.show;
@@ -24,6 +26,10 @@ constructor(private router: Router) {
   validateData(){
 
     this.router.navigate(['dash']);
+  }
+  openModal() {
+    const dialogRef = this.dialog.open(SignupComponent);
+
   }
 
 }
