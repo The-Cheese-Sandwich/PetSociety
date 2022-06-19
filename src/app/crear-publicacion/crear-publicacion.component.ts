@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { PostsService } from '../services/posts.service';
 class ImageSnippet {
   constructor(public src: string, public file: File) {}
 }
@@ -12,9 +13,14 @@ class ImageSnippet {
 
 export class CrearPublicacionComponent implements OnInit {
   selectedFile: ImageSnippet | undefined;
-  constructor(private dialogRef: MatDialogRef<CrearPublicacionComponent>) { }
+  titulo : string = "";
+  descipcion : string = "";
+  User_name = "NombreUser1";
+  
+  constructor(private dialogRef: MatDialogRef<CrearPublicacionComponent> , private postService : PostsService) { }
 
   ngOnInit(): void {
+    
   }
   close(){
     this.dialogRef.close();
@@ -27,7 +33,17 @@ export class CrearPublicacionComponent implements OnInit {
       this.selectedFile = new ImageSnippet(event.target.result, file);
     });
     reader.readAsDataURL(file);
-    
+  }
+  publicar(){
+    if(this.titulo == "" || this.descipcion == "" || this.selectedFile == undefined){
+      alert("Debes llenar todos los datos.");
+    }
+    else{
+      this.postService.addPost(this.titulo, this.descipcion , this.selectedFile.file);
+      alert("Se guardo.");
+      this.dialogRef.close();
+    }
+
   }
   
 
