@@ -5,7 +5,6 @@ import { map } from "rxjs/operators";
 
 
 import { Post } from "../models/post.model";
-import { title } from "process";
 
 @Injectable({ providedIn: "root" })
 export class PostsService {
@@ -23,9 +22,9 @@ export class PostsService {
         return postData.posts.map(post => {
           return {
             id: post._id,
-            image: post.image,
-            description: post.description
-            
+            title: post.title,
+            description: post.description,
+            image: post.image
           };
         });
       }))
@@ -40,8 +39,9 @@ export class PostsService {
     return this.postsUpdated.asObservable();
   }
 
-  addPost(image: File, description: string) {
+  addPost(title: string, description: string, image: File) {
     const postData = new FormData();
+    postData.append("title", title);
     postData.append("description", description);
     postData.append("image", image);
     this.http
@@ -58,11 +58,12 @@ export class PostsService {
       });
   }
 
-  updatePost(id: string, description: string, image: File | string) {
+  updatePost(id: string, title: string, description: string, image: File | string) {
     let postData: Post | FormData;
     if (typeof image === "object") {
       postData = new FormData();
       postData.append("id", id);
+      postData.append("title", title);
       postData.append("description", description);
       postData.append("image", image);
     } else {
