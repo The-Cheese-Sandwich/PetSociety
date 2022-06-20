@@ -14,7 +14,7 @@ import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import { PublicacionesGeneralComponent } from './publicaciones-general/publicaciones-general.component';
 import { GuardadosComponent } from './guardados/guardados.component';
 import { MisPublicacionesComponent } from './mis-publicaciones/mis-publicaciones.component';
-
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +26,13 @@ import { MisPublicacionesComponent } from './mis-publicaciones/mis-publicaciones
     CrearPublicacionComponent,
     PublicacionesGeneralComponent,
     GuardadosComponent,
-    MisPublicacionesComponent
+    MisPublicacionesComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
     FormsModule,
     AppRoutingModule,
     MatDialogModule,
@@ -40,6 +41,7 @@ import { MisPublicacionesComponent } from './mis-publicaciones/mis-publicaciones
   providers: [
     
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }
