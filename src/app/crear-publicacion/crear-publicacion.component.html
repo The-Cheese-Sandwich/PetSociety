@@ -8,8 +8,9 @@
     <img *ngIf="selectedFile=== undefined" src="/assets/no-image-selected.png"  class="form_pet_img">
     <img *ngIf="!(selectedFile=== undefined)" src="{{selectedFile.src}}"  class="form_pet_img">
     <img  src="/assets/imegen-perfil-defult.png"  class="form_user_img">
-    <div class="form_user_name">Nombre de usuario</div>
-    <input class="form_descipcion" type="text" placeholder="Descripcion"  maxlength="300" >
+    <div class="form_user_name">{{User_name}}</div>
+    <input class="form_post_title" type="text" placeholder="Titulo"  maxlength="50" [(ngModel)]="titulo">
+    <textarea  maxlength="250" [(ngModel)]="descipcion" class="form_descipcion" rows="10" cols="60"></textarea>
     <label class="form_button_img">
         <input #imageInput
         type="file"
@@ -19,7 +20,7 @@
         <div *ngIf="!(selectedFile=== undefined)" class="button_img_text">Cambiar imagen</div>
     </label>
     
-    <div class="form_button_publicar" (click)="close()">
+    <div class="form_button_publicar" (click)="publicar()">
         <div class="button_publicar_text">
             Publicar
         </div>
