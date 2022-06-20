@@ -31,7 +31,7 @@ import { MisPublicacionesComponent } from './mis-publicaciones/mis-publicaciones
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
     FormsModule,
     AppRoutingModule,
     MatDialogModule,
