@@ -37,11 +37,11 @@ export class CrearPublicacionComponent implements OnInit {
     reader.readAsDataURL(file);
   }
   publicar(){
-    if(this.titulo == "" || this.descipcion == "" || this.selectedFile == undefined){
+    if(this.descipcion == "" || this.selectedFile == undefined){
       alert("Debes llenar todos los datos.");
     }
     else{
-      this.postService.addPost(this.titulo, this.descipcion , this.selectedFile.file);
+      this.postService.addPost(this.User_name, this.descipcion , this.selectedFile.file);
       alert("Se guardo.");
       this.dialogRef.close();
     }

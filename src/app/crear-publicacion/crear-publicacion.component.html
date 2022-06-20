@@ -5,11 +5,11 @@
     </div>
     <img (click)="close()" src="/assets/close-x.png"  class="from_close">
     <div class="form_line"></div>
-    <img *ngIf="selectedFile=== undefined" src="/assets/no-image-selected.png"  class="form_pet_img">
+    <img *ngIf="selectedFile=== undefined" src="/assets/añadirImagen.png"  class="form_pet_img">
     <img *ngIf="!(selectedFile=== undefined)" src="{{selectedFile.src}}"  class="form_pet_img">
     <img  src="/assets/imegen-perfil-defult.png"  class="form_user_img">
     <div class="form_user_name">{{User_name}}</div>
-    <input class="form_post_title" type="text" placeholder="Titulo"  maxlength="50" [(ngModel)]="titulo">
+    <p class="texto">Añadir descripción*</p>
     <textarea  maxlength="250" [(ngModel)]="descipcion" class="form_descipcion" rows="10" cols="60"></textarea>
     <label class="form_button_img">
         <input #imageInput
