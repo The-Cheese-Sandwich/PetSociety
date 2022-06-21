@@ -7,7 +7,7 @@ import { PublicacionComponent } from './publicacion/publicacion.component';
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HomeDashComponent } from './home-dash/home-dash.component';
 import { LoginComponent } from './login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CrearPublicacionComponent } from './crear-publicacion/crear-publicacion.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
@@ -15,6 +15,7 @@ import { PublicacionesGeneralComponent } from './publicaciones-general/publicaci
 import { GuardadosComponent } from './guardados/guardados.component';
 import { MisPublicacionesComponent } from './mis-publicaciones/mis-publicaciones.component';
 import { SignupComponent } from './signup/signup.component';
+import { AuthInterceptor } from './interceptors/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { SignupComponent } from './signup/signup.component';
     BrowserAnimationsModule
   ],
   providers: [
-    
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ],
   bootstrap: [AppComponent],
 

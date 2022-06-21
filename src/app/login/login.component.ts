@@ -37,9 +37,7 @@ constructor(private router: Router, public dialog: MatDialog, public userService
     if (form.invalid) {
       return;
     }
-    console.log(form);
     this.userService.login(form.value.email, form.value.password);
-    //this.router.navigate(['dash']);
   }
 
 }

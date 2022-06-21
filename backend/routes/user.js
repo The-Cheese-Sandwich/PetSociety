@@ -31,7 +31,6 @@ router.post("/login", (req, res, next) => {
   let fetchedUser;
   User.findOne({ email: req.body.email })
     .then(user => {
-      console.log(user);
       if (!user) {
         return res.status(401).json({
           message: "Auth failed"
@@ -51,7 +50,6 @@ router.post("/login", (req, res, next) => {
         "secret_this_should_be_longer",
         { expiresIn: "1h" }
       );
-      
       res.status(200).json({
         token: token,
         expiresIn: 3600
