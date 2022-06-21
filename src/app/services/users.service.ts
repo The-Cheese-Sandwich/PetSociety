@@ -6,6 +6,7 @@ import {User} from "../models/user.model"
 @Injectable({ providedIn: 'root'})
 export class UsersService {
 
+  private token: string;
   constructor(private http: HttpClient) {}
 
 createUser(email: string, password: string) {
@@ -25,7 +26,8 @@ createUser(email: string, password: string) {
         userData
       )
       .subscribe(response => {
-        console.log(response);
+        const token = response.token;
+        this.token = token;
       })
   }
 }
