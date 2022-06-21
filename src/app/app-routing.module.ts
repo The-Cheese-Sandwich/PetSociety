@@ -6,56 +6,30 @@ import { HomeDashComponent } from './home-dash/home-dash.component';
 import { PublicacionesGeneralComponent } from './publicaciones-general/publicaciones-general.component';
 import { GuardadosComponent } from './guardados/guardados.component';
 import { MisPublicacionesComponent } from './mis-publicaciones/mis-publicaciones.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'dash',
-    pathMatch: 'full',
-  },
-  {
-    path: 'dash',
-    component: DashboardComponent,
+  { path: '', redirectTo: 'dash', pathMatch: 'full' },
+  { path: 'dash', component: DashboardComponent,
     children: [
-      {
-        path: '', 
-        redirectTo: 'home',
-        pathMatch: 'full'
-      },
-      {
-        path: 'home', 
-        component: HomeDashComponent,
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeDashComponent,
         children: [
-          {
-            path: '', 
-            redirectTo: 'publicaciones',
-            pathMatch: 'full'
-          },
-          {
-            path: "publicaciones",
-            component: PublicacionesGeneralComponent            
-          },
-          {
-            path: "guardados",
-            component: GuardadosComponent            
-          },
-          {
-            path: "mis-publicaciones",
-            component: MisPublicacionesComponent            
-          }
+          { path: '', redirectTo: 'publicaciones', pathMatch: 'full'},
+          { path: "publicaciones", component: PublicacionesGeneralComponent },
+          { path: "guardados", component: GuardadosComponent },
+          { path: "mis-publicaciones", component: MisPublicacionesComponent }
         ]
       }
-    ]
+    ], canActivate: [AuthGuard]
   },
-  {
-    path: 'login',
-    component: LoginComponent
-  }
+  { path: 'login', component: LoginComponent }
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }
