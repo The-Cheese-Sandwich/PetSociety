@@ -37,19 +37,19 @@
 .publicacion_img_pet{
     width: 373px;
     height: 373px;
-    margin-top: 5px;
+    margin-top: -15px;
     object-fit: cover; 
 }
 
 .publicacion_descripcion{
     width: auto;
-    margin-top: 10px;
+    margin-top: -10px;
     margin-left: 20px;
     margin-right: 20px;
-    height: 51px;
+    height: auto;
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 13px;
     line-height: 15px;
     display: flex;

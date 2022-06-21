@@ -24,7 +24,7 @@ export class GuardadosComponent implements OnInit {
         userImg: "/assets/imegen-perfil-defult.png",
         username: "Huellitas_adopciones",
         pubImg: "/assets/gatito1.jpg",
-        descrp:  "Se perdio perro fachero de solo 6 meses. Responde por el nombre facha , se lo vio por ultima vez en la calle 18 de calacoto. Es de la raza husky , favor contactar con el numero 74401923",
+        description:  "ddddddddddddddddddddddddddd dddddddddd dddddddddddddddddddd dddddddddddddddddd dddddddddddddddddd ddddddddddddd dddddddd ddddddddddd ddddddddddd dddddddddddddddddddddddddddddddd ddddddddddddddddddddddd dddddddd ddddddddddddd ddddddddd dd dddddddddd d",
         numComm: 50
       },
       {
