@@ -7,17 +7,17 @@ align-items: center;"
         <div class="logo"></div>
         <img src=".\assets\logo-1.png" alt="" class="imagen">
         <div class="formulario">
-            <form>
+            <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
                 <p class="textoemail">Email o Nombre de usuario</p>
-                <input class="input" type="email" id="email" size="30" required>
+                <input class="input" type="email" id="email" size="30" ngModel required>
                 <p class="textopassword">Contraseña</p>
                 <div class="pass">
-                    <input class="input1" required minlength="8" [type]="show ? 'text' : 'password'" />
+                    <input class="input1" required minlength="8" ngModel [type]="show ? 'text' : 'password'" />
                     <button class="sendData" (click)="password()"> <img src=".\assets\show-eye.png">
                     </button>
                 </div>
                 <div >
-                    <button class="boton1" (click)="validateData()">
+                    <button class="boton1" type="submit">
                         INICIAR SESIÓN
                     </button>
                     <p class="texto1">

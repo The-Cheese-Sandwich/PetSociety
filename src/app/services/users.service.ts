@@ -16,4 +16,16 @@ createUser(email: string, password: string) {
         console.log(response);
       });
   }
+
+  login(email: string, password: string) {
+    const userData: User = { email: email, password: password };
+    this.http
+      .post<{ token: string; expiresIn: number }>(
+        "http://localhost:3000/api/user/login",
+        userData
+      )
+      .subscribe(response => {
+        console.log(response);
+      })
+  }
 }
