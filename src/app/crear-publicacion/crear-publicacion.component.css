@@ -81,10 +81,10 @@
 
     color: #000000;
 }
-.form_descipcion{
+.form_post_title{
     position: absolute;
     width: 270px;
-    height: 250px;
+    height: 50px;
     left: 560px;
     top: 202px; 
     font-family: 'Roboto';
@@ -94,7 +94,23 @@
     line-height: 12px; 
     display: flex;
     align-items: center;
+    color: black;
+}
+.form_descipcion{
+    position: absolute;
+    width: 270px;
+    height: 190px;
+    left: 560px;
+    top: 262px; 
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 12px; 
+    display: flex;
+    align-items: center;
     color: #A2A2A2;
+    resize: none;
 }
 .form_button_img{
     position: absolute;

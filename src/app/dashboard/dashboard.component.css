@@ -1,5 +1,6 @@
 .dash{
     position: sticky;
+    display: flex;
     width: auto;
     height: 124px;
     margin-left: 0px;
@@ -11,25 +12,36 @@
 .logo{
     width: 384px;
     height: 113px;
-    margin-left: 57px;
+    margin-left: 60px;
     margin-top: 7px;
 }
-.home{
-    width: 57px;
-    height: 57px;
-    margin-left: 750px;
-    margin-right: 40px;
-    margin-top: 32px;
-} 
-.add{
+
+.icon{
     width: 60px;
     height: 60px;
     margin-right: 40px;
     margin-top: 32px;
 }
-.perfil{
-    width: 60px;
+.cerrarsesion{
+    position: absolute;
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
     height: 60px;
-    margin-right: 65px;
-    margin-top: 32px;
+    margin-left: 40px;
+    margin-top: 95px;
+    background: #FFFFFF;
+    border-radius: 20px 0px 20px 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #F09300;
+    text-decoration-line: underline;
+    letter-spacing: 0.04em;
+    border: none;
+    box-shadow: 2px 3px 4px 3px rgba(0, 0, 0, 0.25);
+}
+.hide{
+    display: none;
 }
