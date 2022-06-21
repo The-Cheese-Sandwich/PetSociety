@@ -14,7 +14,16 @@
 .datosUsuario{
     display: flex;
     margin-left: 15px;
+    margin-right: 10px;
+    width: auto;
     margin-top: 5px;
+}
+.menuvertical{
+    width: 30px;
+    height: 30px;
+    margin-right: 0px;
+    margin-left: auto;
+    margin-top: 10px;
 }
 .publicacion_profile{
     width: 50px;

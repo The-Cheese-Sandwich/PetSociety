@@ -12,8 +12,8 @@ import { CrearPublicacionComponent } from './crear-publicacion/crear-publicacion
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import { PublicacionesGeneralComponent } from './publicaciones-general/publicaciones-general.component';
-import { GuardadosComponent } from './guardados/guardados.component';
 import { MisPublicacionesComponent } from './mis-publicaciones/mis-publicaciones.component';
+import { PublicacionUsuarioComponent } from './publicacion-usuario/publicacion-usuario.component';
 
 
 @NgModule({
@@ -25,8 +25,8 @@ import { MisPublicacionesComponent } from './mis-publicaciones/mis-publicaciones
     LoginComponent,
     CrearPublicacionComponent,
     PublicacionesGeneralComponent,
-    GuardadosComponent,
-    MisPublicacionesComponent
+    MisPublicacionesComponent,
+    PublicacionUsuarioComponent
   ],
   imports: [
     BrowserModule,
