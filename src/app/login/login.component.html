@@ -9,10 +9,10 @@ align-items: center;"
         <div class="formulario">
             <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
                 <p class="textoemail">Email o Nombre de usuario</p>
-                <input class="input" type="email" id="email" size="30" ngModel required>
+                <input class="input" type="email" name="email" size="30" ngModel required>
                 <p class="textopassword">Contraseña</p>
-                <div class="pass">
-                    <input class="input1" required minlength="8" ngModel [type]="show ? 'text' : 'password'" />
+                <div class="pass" name="password">
+                    <input class="input1" required minlength="8"  ngModel [type]="show ? 'text' : 'password'" />
                     <button class="sendData" (click)="password()"> <img src=".\assets\show-eye.png">
                     </button>
                 </div>
