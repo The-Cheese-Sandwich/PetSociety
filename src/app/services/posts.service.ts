@@ -2,8 +2,6 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Subject } from "rxjs";
 import { map } from "rxjs/operators";
-
-
 import { Post } from "../models/post.model";
 
 @Injectable({ providedIn: "root" })
@@ -24,7 +22,8 @@ export class PostsService {
             id: post._id,
             title: post.title,
             description: post.description,
-            image: post.image
+            image: post.image,
+            creator: post.creator
           };
         });
       }))
@@ -39,6 +38,16 @@ export class PostsService {
     return this.postsUpdated.asObservable();
   }
 
+  getPost(id: string) {
+    return this.http.get<{
+      _id: string;
+      title: string;
+      description: string;
+      image: string;
+      creator: string;
+    }>("http://localhost:3000/api/posts/" + id);
+  }
+
   addPost(title: string, description: string, image: File) {
     const postData = new FormData();
     postData.append("title", title);
@@ -51,7 +60,8 @@ export class PostsService {
           id: responseData.post.id,
           title: title,
           description: description,
-          image: responseData.post.image
+          image: responseData.post.image,
+          creator: null
         }
         this.posts.push(post);
         this.postsUpdated.next([...this.posts]);
@@ -71,7 +81,8 @@ export class PostsService {
         id: id,
         title: title,
         description: description,
-        image: image
+        image: image,
+        creator: null
       };
     }
     this.http
@@ -83,7 +94,8 @@ export class PostsService {
           id: id,
           title: title,
           description: description,
-          image: ""
+          image: "",
+          creator: null
         };
         updatedPosts[oldPostIndex] = post;
         this.posts = updatedPosts;
