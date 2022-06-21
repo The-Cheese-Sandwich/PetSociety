@@ -15,6 +15,14 @@
     display: flex;
     margin-left: 15px;
     margin-top: 5px;
+    margin-right: 10px;
+}
+.menu{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-left: auto;
 }
 .publicacion_profile{
     width: 50px;
