@@ -12,20 +12,67 @@ import { FormsModule } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
+  show: boolean = false;
+  
   constructor(private dialogRef: MatDialogRef<SignupComponent>, public userService: UsersService) { }
+
+  password() {
+    this.show = !this.show;
+  }  
 
   onSignup(form: NgForm) {
     if (form.invalid) {
-      return;
+      alert("Asegurese de llenar todos los capos");
     }
-    // min 8 char y numeros
-    this.userService.createUser(form.value.email, form.value.password, form.value.username);
+    else if (!this.verificacion(form.value.password)){
+      var element = document.getElementById('pss');
+      element.classList.toggle('hide');
+    }    
+    else if(form.value.password != form.value.confirmPassword){
+      var element = document.getElementById('cpss');
+      element.classList.toggle('hide');
+    }
+    else{
+      this.userService.createUser(form.value.email, form.value.password, form.value.username);
+    }
   }
   ngOnInit(): void {
   }
   
   close(){
     this.dialogRef.close();
+  }
+
+  verificacion(pass : string): boolean{
+    var numero = false
+    var min = false
+    var may = false
+
+    var numeros="0123456789"
+    for(var i=0; i<pass.length; i++){
+      if (numeros.indexOf(pass.charAt(i),0)!=-1){
+        console.log("num")
+        numero = true
+      }
+    }
+
+    var minusculas="abcdefghyjklmnñopqrstuvwxyz";
+    for(i=0; i<pass.length; i++){
+        if (minusculas.indexOf(pass.charAt(i),0)!=-1){
+          console.log("min")
+          min = true;
+        }
+    }
+
+    var mayusculas="ABCDEFGHYJKLMNÑOPQRSTUVWXYZ";
+    for(i=0; i<pass.length; i++){
+        if (mayusculas.indexOf(pass.charAt(i),0)!=-1){
+          console.log("may")
+          may = true;
+        }
+    }
+
+    return (numero && min && may && pass.length > 8)
   }
 
 }

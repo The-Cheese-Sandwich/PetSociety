@@ -59,7 +59,7 @@ export class CrearPublicacionComponent implements OnInit {
     }
     else{
       this.postService.addPost(this.User_name, this.descipcion , this.selectedFile.file);
-      alert("Se guardo.");
+      alert("Tu publicacion se subió correctamente.");
       this.dialogRef.close();
     }
 

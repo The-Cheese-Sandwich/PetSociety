@@ -26,7 +26,7 @@ constructor(private router: Router, public dialog: MatDialog, public userService
   }
 
   validateData(){
-
+    
     this.router.navigate(['dash']);
   }
   openModal() {
@@ -34,10 +34,18 @@ constructor(private router: Router, public dialog: MatDialog, public userService
 
   }
   onLogin(form: NgForm) {
+  
     if (form.invalid) {
-      return;
-    }
+      alert("Asegurese de llenar todos los capos");
+    } else if (this.verificacion(form.value.password)){
+      alert("Contraseña o correo invalido");
+    } else { 
     this.userService.login(form.value.email, form.value.password);
+    }   
+  }
+
+  verificacion(pass : string): boolean{
+    return pass.length < 8;
   }
 
 }

@@ -24,7 +24,7 @@ export class PublicacionUsuarioComponent implements OnInit {
   }
 
   deletePub(){
-    if (confirm("Estas seguro que deseas borrar esta publicación!") == true) {
+    if (confirm("¿Estás seguro que deseas borrar esta publicación?") == true) {
       this.postService.deletePost(this.publicacion.id);
     }
     

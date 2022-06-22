@@ -21,7 +21,7 @@ export class PublicacionesGeneralComponent implements OnInit {
 
     this.postsSub = this.postsService.getPostUpdateListener()
       .subscribe((posts: Post[]) => {
-        this.publicaciones = posts;
+        this.publicaciones = posts.reverse();
         this.postsSub.unsubscribe()
       }); 
 

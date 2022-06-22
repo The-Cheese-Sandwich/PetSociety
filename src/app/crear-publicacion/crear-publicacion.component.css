@@ -122,6 +122,10 @@
     border: 2px solid #F09300;
     border-radius: 6px;
 }
+.form_button_img:hover{
+    background: #F05600;
+    cursor: pointer;
+}
 .button_img_text{
     margin-top: 5px;
     text-align:center;
@@ -141,6 +145,11 @@
     border: 2px solid #25AFAC;
     border-radius: 6px;
 }
+.form_button_publicar:hover{
+    background: #1a7755;
+    cursor: pointer;
+}
+
 .button_publicar_text{
     margin-top: 15px;
     text-align:center;
