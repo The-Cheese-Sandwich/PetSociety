@@ -102,7 +102,7 @@ export class PostsService {
         updatedPosts[oldPostIndex] = post;
         this.posts = updatedPosts;
         this.postsUpdated.next([...this.posts]);
-        this.router.navigate(["/"]);
+        window.location.reload();
       });
   }
 
@@ -112,7 +112,7 @@ export class PostsService {
       const updatedPosts = this.posts.filter(post => post.id !== id);
       this.posts = updatedPosts;
       this.postsUpdated.next([...this.posts]);
-      this.router.navigate(["/"]);
+      window.location.reload();
     });
   }
 }

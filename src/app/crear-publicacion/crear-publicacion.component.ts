@@ -62,7 +62,7 @@ export class CrearPublicacionComponent implements OnInit {
       this.postService.addPost(this.User_name, this.descipcion , this.selectedFile.file);
       alert("Tu publicación se subió correctamente.");
       this.dialogRef.afterClosed().subscribe(x  => {
-        this.router.navigate(["http://localhost:4200/dash/home/mis-publicaciones"])
+        window.location.reload();
       })
       this.dialogRef.close();
     }
