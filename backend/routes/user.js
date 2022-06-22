@@ -9,6 +9,7 @@ router.post("/signup", (req, res, next) => {
     bcrypt.hash(req.body.password, 10)
      .then(hash => {
         const user = new User({
+            username: req.body.username,
             email: req.body.email,
             password: hash
         });
@@ -26,7 +27,6 @@ router.post("/signup", (req, res, next) => {
          });
      });
 });
-
 router.post("/login", (req, res, next) => {
   let fetchedUser;
   User.findOne({ email: req.body.email })
@@ -61,6 +61,15 @@ router.post("/login", (req, res, next) => {
         message: "Auth failed"
       });
     });
+});
+router.get("/:id", (req, res, next) => {
+  User.findById(req.params.id).then(user => {
+    if (user) {
+      res.status(200).json(user);
+    } else {
+      res.status(404).json({ message: "User not found!" });
+    }
+  });
 });
 
 module.exports = router;

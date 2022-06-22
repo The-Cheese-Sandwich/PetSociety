@@ -1,0 +1,29 @@
+
+<div class="container_publicacion">
+
+    <div class="datosUsuario">
+        <img src="./assets/imegen-perfil-defult.png"  class="publicacion_profile">
+        <div class="username">{{publicacion.title}}</div>
+        <img src="/assets/edit-icon.png" alt="" class="publicacion_icon" (click)="updatePub()">
+        <img src="/assets/delete-icon.png" alt="" class="publicacion_icon" (click)="deletePub()">
+    </div>
+    
+    
+    <img src="{{publicacion.image}}"  class="publicacion_img_pet">
+    
+    <div class="publicacion_descripcion">
+        {{publicacion.description}}
+    </div>
+    <div class="">
+
+    </div>
+    <img  src="/assets/comments.png"  class="publicacion_icon">
+    <img *ngIf="false" src="/assets/pin-selected.png"  class="publicacion_icon">
+    <img *ngIf="true" src="/assets/pin.png"  class="publicacion_icon">
+    <div class="publicacion_comentarios">
+       
+    </div>
+    
+    
+
+</div>

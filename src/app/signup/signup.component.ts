@@ -18,7 +18,8 @@ export class SignupComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    this.userService.createUser(form.value.email, form.value.password)
+    // min 8 char y numeros
+    this.userService.createUser(form.value.email, form.value.password, form.value.username);
   }
   ngOnInit(): void {
   }
