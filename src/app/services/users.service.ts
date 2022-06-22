@@ -32,17 +32,26 @@ export class UsersService {
     return this.userId; 
   }
 
-  createUser(email: string, password: string) {
-    const userData: User = {email:email, password: password} 
+  createUser(email: string, password: string , username : string) {
+    const userData: User = {email:email, password: password , username: username } 
     this.http
     .post<{}>("http://localhost:3000/api/user/signup", userData)
     .subscribe(response => {
         console.log(response);
       });
   }
+  getUser() {
+    return this.http.get<{
+      _id: string;
+      email: string;
+      password: string;
+      username : string;
+    }>("http://localhost:3000/api/user/" + this.userId);
+  }
+
 
   login(email: string, password: string) {
-    const userData: User = { email: email, password: password };
+    const userData: User = { email: email, password: password  , username: ""};
     this.http
       .post<{ token: string; expiresIn: number; userId: string }>(
         "http://localhost:3000/api/user/login",

@@ -1,7 +1,9 @@
 import { Component, Inject, Input, OnInit, Optional } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Post } from '../models/post.model';
+import { User } from '../models/user.model';
 import { PostsService } from '../services/posts.service';
+import { UsersService } from '../services/users.service';
 class ImageSnippet {
   constructor(public src: string, public file: File) {}
 }
@@ -20,7 +22,7 @@ export class CrearPublicacionComponent implements OnInit {
   public post: Post;
   public urlImg: string;
   
-  constructor(private dialogRef: MatDialogRef<CrearPublicacionComponent> , 
+  constructor(private userService: UsersService , private dialogRef: MatDialogRef<CrearPublicacionComponent> , 
     private postService : PostsService , @Optional() @Inject(MAT_DIALOG_DATA) public data: Post) {
    if(data !=null)
     this.post = {...data};
@@ -28,13 +30,15 @@ export class CrearPublicacionComponent implements OnInit {
 
   ngOnInit(): void {
     this.llenarIfEdit();
+    this.userService.getUser().subscribe((user: User) => {
+      this.User_name =user.username;
+    });
   }
   llenarIfEdit(){
     if(this.post != undefined){
       this.urlImg = this.post.image;
       this.descipcion = this.post.description;
     }
-      
   }
   close(){
     this.dialogRef.close();
