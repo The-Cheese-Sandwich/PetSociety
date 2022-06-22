@@ -12,20 +12,39 @@ import { FormsModule } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
+  show: boolean = false;
+  
   constructor(private dialogRef: MatDialogRef<SignupComponent>, public userService: UsersService) { }
+
+  password() {
+    this.show = !this.show;
+  }  
 
   onSignup(form: NgForm) {
     if (form.invalid) {
-      return;
+      alert("Asegurese de llenar todos los capos");
     }
-    // min 8 char y numeros
-    this.userService.createUser(form.value.email, form.value.password, form.value.username);
+    else if (this.verificacion(form.value.password) && form.value.password){
+      var element = document.getElementById('pss');
+      element.classList.toggle('hide');
+    }    
+    else if(form.value.password != form.value.confirmPassword){
+      var element = document.getElementById('cpss');
+      element.classList.toggle('hide');
+    }
+    else{
+      this.userService.createUser(form.value.email, form.value.password, form.value.username);
+    }
   }
   ngOnInit(): void {
   }
   
   close(){
     this.dialogRef.close();
+  }
+
+  verificacion(pass : string): boolean{
+    return false
   }
 
 }
