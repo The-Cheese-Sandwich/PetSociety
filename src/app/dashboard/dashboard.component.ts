@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
     });
   }
   openModal() {
-    this.dialog.open(CrearPublicacionComponent);
+    this.dialog.open(CrearPublicacionComponent)
   }
 
   logout(){

@@ -1,5 +1,6 @@
 import { Component, Inject, Input, OnInit, Optional } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Post } from '../models/post.model';
 import { User } from '../models/user.model';
 import { PostsService } from '../services/posts.service';
@@ -23,7 +24,7 @@ export class CrearPublicacionComponent implements OnInit {
   public urlImg: string;
   
   constructor(private userService: UsersService , private dialogRef: MatDialogRef<CrearPublicacionComponent> , 
-    private postService : PostsService , @Optional() @Inject(MAT_DIALOG_DATA) public data: Post) {
+    private postService : PostsService , @Optional() @Inject(MAT_DIALOG_DATA) public data: Post, private router: Router) {
    if(data !=null)
     this.post = {...data};
   }
@@ -60,6 +61,9 @@ export class CrearPublicacionComponent implements OnInit {
     else{
       this.postService.addPost(this.User_name, this.descipcion , this.selectedFile.file);
       alert("Tu publicación se subió correctamente.");
+      this.dialogRef.afterClosed().subscribe(x  => {
+        this.router.navigate(["http://localhost:4200/dash/home/mis-publicaciones"])
+      })
       this.dialogRef.close();
     }
 
