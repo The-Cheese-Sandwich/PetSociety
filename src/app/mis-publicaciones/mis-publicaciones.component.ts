@@ -26,7 +26,7 @@ export class MisPublicacionesComponent implements OnInit {
     this.postsService.getPosts()
     this.postsSub = this.postsService.getPostUpdateListener()
       .subscribe((posts: Post[]) => {
-        this.publicaciones = posts;
+        this.publicaciones = posts.reverse();
         this.postsSub.unsubscribe();
       })
       this.postsSub.add( () =>{

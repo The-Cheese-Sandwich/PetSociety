@@ -53,6 +53,7 @@
     margin-top: 0px;
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 20px;
     height: auto;
     font-family: 'Roboto';
     font-style: normal;
@@ -69,6 +70,9 @@
     padding-right: 20px;
     width: 30px;
     height: 30px;
+}
+.publicacion_icon{
+    cursor: pointer;
 }
 .publicacion_comentarios{
     width: 140px;

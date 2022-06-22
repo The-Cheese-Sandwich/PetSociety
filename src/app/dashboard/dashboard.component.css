@@ -65,6 +65,10 @@
     border: none;
     box-shadow: 2px 3px 4px 3px rgba(0, 0, 0, 0.25);
 }
+.cerrarsesion:hover{
+    background: #e8e8e8;
+    cursor: pointer;
+}
 .hide{
     display: none;
 }
