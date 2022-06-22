@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
     if (form.invalid) {
       alert("Asegurese de llenar todos los capos");
     }
-    else if (this.verificacion(form.value.password) && form.value.password){
+    else if (!this.verificacion(form.value.password) && form.value.password.length() < 8){
       var element = document.getElementById('pss');
       element.classList.toggle('hide');
     }    
@@ -44,7 +44,35 @@ export class SignupComponent implements OnInit {
   }
 
   verificacion(pass : string): boolean{
-    return false
+    var numero = false
+    var min = false
+    var may = false
+
+    var numeros="0123456789"
+    for(var i=0; i<pass.length; i++){
+      if (numeros.indexOf(pass.charAt(i),0)!=-1){
+        console.log("num")
+        numero = true
+      }
+    }
+
+    var minusculas="abcdefghyjklmnñopqrstuvwxyz";
+    for(i=0; i<pass.length; i++){
+        if (minusculas.indexOf(pass.charAt(i),0)!=-1){
+          console.log("min")
+          min = true;
+        }
+    }
+
+    var mayusculas="ABCDEFGHYJKLMNÑOPQRSTUVWXYZ";
+    for(i=0; i<pass.length; i++){
+        if (mayusculas.indexOf(pass.charAt(i),0)!=-1){
+          console.log("may")
+          may = true;
+        }
+    }
+
+    return (numero && min && may)
   }
 
 }

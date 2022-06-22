@@ -4,6 +4,8 @@ import { HttpClient } from "@angular/common/http";
 import { User } from "../models/user.model";
 import { Subject } from "rxjs";
 import { Router } from "@angular/router";
+import { SignupComponent } from "../signup/signup.component";
+import { MatDialog } from "@angular/material/dialog";
 
 @Injectable({ providedIn: 'root'})
 export class UsersService {
@@ -14,7 +16,7 @@ export class UsersService {
   private userId: string;
   private authStatusListener = new Subject<boolean>();
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router, public dialog: MatDialog) {}
 
   getToken(){
     return this.token;
@@ -36,10 +38,18 @@ export class UsersService {
     const userData: User = {email:email, password: password , username: username } 
     this.http
     .post<{}>("http://localhost:3000/api/user/signup", userData)
-    .subscribe(response => {
+    .subscribe( response => {
         console.log(response);
-      });
+        alert("El usuario se creo correctamente")
+        const dialogRef = this.dialog.closeAll()
+      }, 
+      err=>{
+        console.log(err);
+        alert("El email ya esta en uso")
+      }
+      );
   }
+
   getUser() {
     return this.http.get<{
       _id: string;
