@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
     if (form.invalid) {
       alert("Asegurese de llenar todos los capos");
     }
-    else if (!this.verificacion(form.value.password) && form.value.password.length() < 8){
+    else if (!this.verificacion(form.value.password)){
       var element = document.getElementById('pss');
       element.classList.toggle('hide');
     }    
@@ -72,7 +72,7 @@ export class SignupComponent implements OnInit {
         }
     }
 
-    return (numero && min && may)
+    return (numero && min && may && pass.length > 8)
   }
 
 }

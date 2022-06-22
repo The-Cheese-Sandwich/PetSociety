@@ -41,6 +41,10 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
 }
+.boton1:hover{
+    background: #1a7755;
+    cursor: pointer;
+}
 .pass{
     display: inline-flex;
     width: 454px;
