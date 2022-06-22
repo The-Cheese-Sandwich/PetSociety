@@ -10,12 +10,14 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CrearPublicacionComponent } from './crear-publicacion/crear-publicacion.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { PublicacionesGeneralComponent } from './publicaciones-general/publicaciones-general.component';
 import { MisPublicacionesComponent } from './mis-publicaciones/mis-publicaciones.component';
 import { SignupComponent } from './signup/signup.component';
 import { AuthInterceptor } from './interceptors/auth-interceptor';
 import { PublicacionUsuarioComponent } from './publicacion-usuario/publicacion-usuario.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { PublicacionUsuarioComponent } from './publicacion-usuario/publicacion-u
     FormsModule,
     AppRoutingModule,
     MatDialogModule,
+    MatProgressSpinnerModule,
     BrowserAnimationsModule
   ],
   providers: [

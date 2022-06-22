@@ -1,5 +1,7 @@
-<div class="publicaciones">
-    <div *ngFor="let publicacion of publicaciones">
-      <app-publicacion-usuario [publicacion]="publicacion"></app-publicacion-usuario>
-    </div>
+
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <div class="publicaciones" *ngIf="!isLoading">
+  
+  <div *ngFor="let publicacion of publicaciones">
+    <app-publicacion-usuario [publicacion]="publicacion"></app-publicacion-usuario>
   </div>
