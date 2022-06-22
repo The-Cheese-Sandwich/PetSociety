@@ -14,10 +14,11 @@ export class MisPublicacionesComponent implements OnInit {
   publicaciones?: Post[];
   private postsSub: Subscription; 
   private userId :string;
-
+  public isLoading = false
   constructor(private userService: UsersService , private postsService : PostsService) { }
 
   ngOnInit(): void {
+    this.isLoading = true
     this.userId = this.userService.getUserId();
     this.getPublis();
   }
@@ -30,6 +31,7 @@ export class MisPublicacionesComponent implements OnInit {
         this.postsSub.unsubscribe();
       })
       this.postsSub.add( () =>{
+        this.isLoading = false
         this.publicaciones =  this.publicaciones.filter(p => p.creator == this.userId)
       });
   }

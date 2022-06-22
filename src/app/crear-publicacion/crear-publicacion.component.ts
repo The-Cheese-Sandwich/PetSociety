@@ -59,7 +59,7 @@ export class CrearPublicacionComponent implements OnInit {
     }
     else{
       this.postService.addPost(this.User_name, this.descipcion , this.selectedFile.file);
-      alert("Tu publicacion se subió correctamente.");
+      alert("Tu publicación se subió correctamente.");
       this.dialogRef.close();
     }
 
@@ -73,7 +73,7 @@ export class CrearPublicacionComponent implements OnInit {
         this.postService.updatePost(this.post.id , this.User_name, this.descipcion , this.urlImg);
       else
         this.postService.updatePost(this.post.id , this.User_name, this.descipcion , this.selectedFile.file);
-      alert("Se actualizo la publicacion.");
+      alert("Se actualizó la publicación.");
       this.dialogRef.close();
     }
 

@@ -51,7 +51,6 @@ export class SignupComponent implements OnInit {
     var numeros="0123456789"
     for(var i=0; i<pass.length; i++){
       if (numeros.indexOf(pass.charAt(i),0)!=-1){
-        console.log("num")
         numero = true
       }
     }
@@ -59,7 +58,6 @@ export class SignupComponent implements OnInit {
     var minusculas="abcdefghyjklmnñopqrstuvwxyz";
     for(i=0; i<pass.length; i++){
         if (minusculas.indexOf(pass.charAt(i),0)!=-1){
-          console.log("min")
           min = true;
         }
     }
@@ -67,12 +65,11 @@ export class SignupComponent implements OnInit {
     var mayusculas="ABCDEFGHYJKLMNÑOPQRSTUVWXYZ";
     for(i=0; i<pass.length; i++){
         if (mayusculas.indexOf(pass.charAt(i),0)!=-1){
-          console.log("may")
           may = true;
         }
     }
 
-    return (numero && min && may && pass.length > 8)
+    return (numero && min && may && pass.length >= 8)
   }
 
 }
