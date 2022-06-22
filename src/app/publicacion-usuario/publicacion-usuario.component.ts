@@ -1,4 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CrearPublicacionComponent } from '../crear-publicacion/crear-publicacion.component';
+import { Post } from '../models/post.model';
+import { PostsService } from '../services/posts.service';
 
 @Component({
   selector: 'app-publicacion-usuario',
@@ -7,10 +11,24 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PublicacionUsuarioComponent implements OnInit {
 
-  @Input() publicacion?: any;
-  constructor() { }
+  @Input() publicacion?: Post;
+  constructor( public dialog: MatDialog, private postService : PostsService) { }
 
   ngOnInit(): void {
   }
+  
+  updatePub(){
+    this.dialog.open(CrearPublicacionComponent, {
+      data: this.publicacion
+    });
+  }
+
+  deletePub(){
+    if (confirm("Estas seguro que deseas borrar esta publicación!") == true) {
+      this.postService.deletePost(this.publicacion.id);
+    }
+    
+  }
+  
 
 }

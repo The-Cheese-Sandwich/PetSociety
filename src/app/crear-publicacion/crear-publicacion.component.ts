@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, Input, OnInit, Optional } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Post } from '../models/post.model';
 import { PostsService } from '../services/posts.service';
 class ImageSnippet {
   constructor(public src: string, public file: File) {}
@@ -13,21 +14,33 @@ class ImageSnippet {
 
 export class CrearPublicacionComponent implements OnInit {
   selectedFile: ImageSnippet | undefined;
-  titulo : string = "";
+  //titulo : string = "";
   descipcion : string = "";
   User_name = "NombreUser1";
+  public post: Post;
+  public urlImg: string;
   
-  
-  constructor(private dialogRef: MatDialogRef<CrearPublicacionComponent> , private postService : PostsService) { }
+  constructor(private dialogRef: MatDialogRef<CrearPublicacionComponent> , 
+    private postService : PostsService , @Optional() @Inject(MAT_DIALOG_DATA) public data: Post) {
+   if(data !=null)
+    this.post = {...data};
+  }
 
   ngOnInit(): void {
-   
-    
+    this.llenarIfEdit();
+  }
+  llenarIfEdit(){
+    if(this.post != undefined){
+      this.urlImg = this.post.image;
+      this.descipcion = this.post.description;
+    }
+      
   }
   close(){
     this.dialogRef.close();
   }
   processFile(imageInput: any) {
+    this.urlImg = undefined;
     const file: File = imageInput.files[0];
     const reader = new FileReader();
     reader.addEventListener('load', (event: any) => {
@@ -43,6 +56,20 @@ export class CrearPublicacionComponent implements OnInit {
     else{
       this.postService.addPost(this.User_name, this.descipcion , this.selectedFile.file);
       alert("Se guardo.");
+      this.dialogRef.close();
+    }
+
+  }
+  editar(){
+    if(this.descipcion == "" ){
+      alert("Debes llenar todos los datos.");
+    }
+    else{
+      if(this.urlImg != undefined)
+        this.postService.updatePost(this.post.id , this.User_name, this.descipcion , this.urlImg);
+      else
+        this.postService.updatePost(this.post.id , this.User_name, this.descipcion , this.selectedFile.file);
+      alert("Se actualizo la publicacion.");
       this.dialogRef.close();
     }
 

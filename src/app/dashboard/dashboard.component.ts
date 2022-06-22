@@ -15,9 +15,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
   openModal() {
-    const dialogRef = this.dialog.open(CrearPublicacionComponent);
-
+    this.dialog.open(CrearPublicacionComponent);
   }
+
   logout(){
     this.router.navigate(['login']);
   }
