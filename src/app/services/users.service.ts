@@ -82,7 +82,12 @@ export class UsersService {
           this.saveAuthData(token, expirationDate, this.userId);
           this.router.navigate(["/"]);
         }
-      });
+      }, 
+      err=>{
+        console.log(err);
+        alert("El email o la contraseña no son correctos")
+      }
+      );
   }
 
   logout(){

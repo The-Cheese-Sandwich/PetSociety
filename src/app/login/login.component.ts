@@ -26,7 +26,7 @@ constructor(private router: Router, public dialog: MatDialog, public userService
   }
 
   validateData(){
-
+    
     this.router.navigate(['dash']);
   }
   openModal() {
@@ -34,10 +34,13 @@ constructor(private router: Router, public dialog: MatDialog, public userService
 
   }
   onLogin(form: NgForm) {
+  
     if (form.invalid) {
-      return;
-    }
+      alert("Asegurese de llenar todos los capos");
+    } else { 
     this.userService.login(form.value.email, form.value.password);
+    } 
+        
   }
 
 }

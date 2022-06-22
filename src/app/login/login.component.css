@@ -158,3 +158,15 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
 }
+.hide{
+    display: none;
+}
+
+.boton1:hover{
+    background: #1a7755;
+    cursor: pointer;
+}
+.boton2:hover{
+    background: #F05600;
+    cursor: pointer;
+}

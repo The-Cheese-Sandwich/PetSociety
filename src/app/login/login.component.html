@@ -8,22 +8,17 @@ align-items: center;"
         <img src=".\assets\logo-1.png" alt="" class="imagen">
         <div class="formulario">
             <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
-                <p class="textoemail">Email o Nombre de usuario</p>
-                <input class="input" type="email" name="email" size="30" ngModel required>
+                <p class="textoemail">Email</p>
+                <input required email class="input" type="email" name="email" size="30" ngModel >
                 <p class="textopassword">Contraseña</p>
                 <div class="pass">
                     <input class="input1"  minlength="8" name="password"  [type]="show ? 'text' : 'password'" ngModel required/>
-                    <button class="sendData" (click)="password()"> <img src=".\assets\show-eye.png"></button>
+                    <p id="contrac" class="texto hide" style="color: rgb(255, 97, 97); font-size: 10px; margin-top: 5px;">*La contraseña es incorrecta*</p>
+                    <button type="button" class="sendData" (click)="password()"> <img src=".\assets\show-eye.png"></button>
                 </div>
-                <div >
-                    <button class="boton1" type="submit">
-                        INICIAR SESIÓN
-                    </button>
-                    <p class="texto1">
-                        ¿Haz olvidado tu contraseña?
-                    </p>
-                    
-                </div>
+                <button class="boton1" type="submit">
+                    INICIAR SESIÓN
+                </button>
             </form>
             <button class="boton2" (click)="openModal()" >
                 REGISTRAR CUENTA NUEVA
