@@ -1,9 +1,6 @@
-<!--<body class="pubs" >
-  <div *ngFor="let publicacion of publicaciones">
-    <app-publicacion [publicacion]="publicacion"></app-publicacion>
-  </div>
-</body> -->
-<div class="publicaciones">
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+  
+<div class="publicaciones" *ngIf="!isLoading">
   <div *ngFor="let publicacion of publicaciones">
     <app-publicacion [publicacion]="publicacion"></app-publicacion>
   </div>
