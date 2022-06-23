@@ -55,8 +55,13 @@ export class CrearPublicacionComponent implements OnInit {
     reader.readAsDataURL(file);
   }
   publicar(){
+    
     if(this.descipcion == "" || this.selectedFile == undefined){
       alert("Debes llenar todos los datos.");
+    }
+    else if(!this.selectedFile.file.name.endsWith(".png") && !this.selectedFile.file.name.endsWith(".jpg") 
+         && !this.selectedFile.file.name.endsWith(".jpeg") && !this.selectedFile.file.name.endsWith(".jfif")){
+      alert("Formato inválido, solo se acepta .png, .jpg, .jpeg o .jfif");
     }
     else{
       this.postService.addPost(this.User_name, this.descipcion , this.selectedFile.file);
@@ -75,10 +80,16 @@ export class CrearPublicacionComponent implements OnInit {
     else{
       if(this.urlImg != undefined)
         this.postService.updatePost(this.post.id , this.User_name, this.descipcion , this.urlImg);
-      else
+      else if(!this.selectedFile.file.name.endsWith(".png") && !this.selectedFile.file.name.endsWith(".jpg") 
+         && !this.selectedFile.file.name.endsWith(".jpeg") && !this.selectedFile.file.name.endsWith(".jfif")){
+        alert("Formato inválido, solo se acepta .png, .jpg, .jpeg o .jfif");
+      }
+      else{
         this.postService.updatePost(this.post.id , this.User_name, this.descipcion , this.selectedFile.file);
-      alert("Se actualizó la publicación.");
-      this.dialogRef.close();
+        alert("Se actualizó la publicación.");
+        this.dialogRef.close();
+      } 
+      
     }
 
   }
