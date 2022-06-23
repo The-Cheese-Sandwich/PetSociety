@@ -7,8 +7,8 @@
     width: 1100px;
     height: 650px;
     margin: auto;
-    margin-top: 200px;
 }
+
 .formulario{
     width: 454px;
     height: 441px;
@@ -63,7 +63,21 @@
     margin-top: 0px;
 }
 
-.texto{
+.textoemail{
+    width: 260px;
+    height: auto;
+    margin-left: 0px;
+    margin-top: 23px;
+    margin-bottom: 6px;
+    color: #A2A2A2;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 12px;
+}
+
+.textopassword{
     width: 260px;
     height: auto;
     margin-left: 0px;
@@ -96,6 +110,13 @@
 }
 .imagen{
 
+    width: 547px;
+    height: 493px;
+    margin-left: -10px;
+    margin-top: 79px;
+    border-right: 1px solid #A2A2A2;
+}
+.eyeicon {
     width: 547px;
     height: 493px;
     margin-left: -10px;
@@ -136,4 +157,16 @@
     color: #FFFFFF;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+}
+.hide{
+    display: none;
+}
+
+.boton1:hover{
+    background: #1a7755;
+    cursor: pointer;
+}
+.boton2:hover{
+    background: #F05600;
+    cursor: pointer;
 }

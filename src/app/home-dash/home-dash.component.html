@@ -1,13 +1,18 @@
 <div class="dash">
     <div style=" display:inline-flex; ">
-        <div class="eleccion">
+        <div id="pub" class="selected"
+        (click)="changeState('pub')"
+        routerLink="publicaciones"
+        routerLinkActive="active-router">
             <p class="texto">Publicaciones</p>
         </div>
-        <div class="deselect">
-            <p class="texto">Guardar</p>
-        </div>
-        <div class="deselect">
+        <div id="mip" class="deselect"
+        (click)="changeState('mip')"
+        routerLink="mis-publicaciones"
+        routerLinkActive="active-router">
             <p class="texto">Mis Publicaciones</p>
         </div>
     </div>
 </div>
+
+<router-outlet></router-outlet>

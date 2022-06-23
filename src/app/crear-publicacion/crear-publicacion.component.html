@@ -1,0 +1,34 @@
+
+<div class="container_from">
+    <div class="form_title">
+        Nueva publicación
+    </div>
+    <img (click)="close()" src="/assets/close-x.png"  class="from_close">
+    <div class="form_line"></div>
+    <img *ngIf="!(urlImg=== undefined)" src="{{urlImg}}"  class="form_pet_img">
+    <img *ngIf="selectedFile=== undefined && urlImg=== undefined" src="/assets/añadirImagen.png"  class="form_pet_img">
+    <img *ngIf="!(selectedFile=== undefined)" src="{{selectedFile.src}}"  class="form_pet_img">
+    <img  src="/assets/imegen-perfil-defult.png"  class="form_user_img">
+    <div class="form_user_name">{{User_name}}</div>
+    <p class="texto">Añadir descripción*</p>
+    <textarea  maxlength="250" [(ngModel)]="descipcion" class="form_descipcion" rows="10" cols="60"></textarea>
+    <label class="form_button_img">
+        <input #imageInput
+        type="file"
+        accept="image/*"
+        (change)="processFile(imageInput)"/>
+        <div *ngIf="selectedFile=== undefined && urlImg=== undefined" class="button_img_text">Escoger imagen</div>
+        <div *ngIf="!(selectedFile=== undefined) || !(urlImg=== undefined)" class="button_img_text">Cambiar imagen</div>
+    </label>
+    
+    <div  *ngIf="post=== undefined" class="form_button_publicar" (click)="publicar()">
+        <div class="button_publicar_text">
+            Publicar
+        </div>
+    </div>
+    <div  *ngIf="!(post=== undefined)" class="form_button_publicar" (click)="editar()">
+        <div class="button_publicar_text">
+            Publicar
+        </div>
+    </div>
+</div>
