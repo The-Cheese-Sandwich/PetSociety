@@ -1,26 +1,42 @@
 # PetSociety
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+Este proyecto fue generado por [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+
+## Resumen
+Pet Society es una aplicación web enfocada en la publicación de mascotas extraviados o que buscan ser adoptados.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Para levantar la aplicación,  usar  los siguientes comandos:
+- npm run start:server (backend)
+- npm start (frontend)
 
-## Code scaffolding
+## Recomendaciones:
+Si por algún motivo salen errores en el código, instalar los siguientes comandos:
+- npm i
+- npm i jsonwebtoken
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Funcionalidades
+El usuario podrá realizar las siguientes acciones:
+1. Registrarse con su correo electrónico y una contraseña.
+2. Iniciar sesión (previamente registrado)
+3. Cerrar Sesión
+4. Crear publicaciones con las siguientes características:
+5. Imagen de la mascota.
+6. Descripción de la mascota, ya sea para describir el extravío o la disponibilidad de adopción.
+7. Editar/ Eliminar las publicaciones (previamente creadas).
+8. Ver publicaciones de otros usuarios.
 
-## Build
+## Observaciones (Datos importantes a considerar)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Las imágenes deben ser de extensión .png .jpeg .jpg .jfif
 
-## Running unit tests
+- Todas las imágenes están almacenadas de forma local, cuando terceras personas realicen sus publicaciones no se podrán ver las imágenes de estas. Por lo tanto en la consola aparecerán errores de tipo GET. 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Cuando el usuario ingresa una imagen para publicar,  se recomienda usar una imagen cuadrada para que no aparezca con cortes.
 
-## Running end-to-end tests
+- La base de datos usada fue “MongoDB Atlas” por lo que no se necesita instalar localmente mongoDB.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 ## Further help
 
