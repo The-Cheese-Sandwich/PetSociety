@@ -1,20 +1,20 @@
 # PetSociety
 
-Este proyecto fue generado por [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+Este proyecto fue generado por [Angular CLI](https://github.com/angular/angular-cli) versión 13.1.2.
 
 ## Resumen
-Pet Society es una aplicación web enfocada en la publicación de mascotas extraviados o que buscan ser adoptados.
+Pet Society es una aplicación web enfocada en la publicación de mascotas extraviadas o que buscan ser adoptadas.
 
 ## Development server
 
-Para levantar la aplicación,  usar  los siguientes comandos:
+Para levantar la aplicación, usar los siguientes comandos:
 - npm run start:server (backend)
 - npm start (frontend)
 
 ## Recomendaciones:
 Si por algún motivo salen errores en el código, instalar los siguientes comandos:
 - npm i
-- npm i jsonwebtoken
+- npm i --save jsonwebtoken
 
 ## Funcionalidades
 El usuario podrá realizar las siguientes acciones:
@@ -33,9 +33,9 @@ El usuario podrá realizar las siguientes acciones:
 
 - Todas las imágenes están almacenadas de forma local, cuando terceras personas realicen sus publicaciones no se podrán ver las imágenes de estas. Por lo tanto en la consola aparecerán errores de tipo GET. 
 
-- Cuando el usuario ingresa una imagen para publicar,  se recomienda usar una imagen cuadrada para que no aparezca con cortes.
+- Cuando el usuario ingresa una imagen para publicar, se recomienda usar una imagen cuadrada para que no aparezca con cortes.
 
-- La base de datos usada fue “MongoDB Atlas” por lo que no se necesita instalar localmente mongoDB.
+- La base de datos usada fue “MongoDB Atlas” por lo que no se necesita instalar localmente MongoDB.
 
 
 ## Further help
