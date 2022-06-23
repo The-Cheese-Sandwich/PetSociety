@@ -67,6 +67,8 @@ export class PostsService {
         this.posts.push(post);
         this.postsUpdated.next([...this.posts]);
         this.router.navigate(["/"]);
+      }, err => {
+        alert("No se pudo subir su puclicación, la extención de su imagen no es valida")
       });
   }
 
