@@ -55,8 +55,12 @@ export class CrearPublicacionComponent implements OnInit {
     reader.readAsDataURL(file);
   }
   publicar(){
+    
     if(this.descipcion == "" || this.selectedFile == undefined){
       alert("Debes llenar todos los datos.");
+    }
+    else if(!this.selectedFile.file.name.endsWith(".png") && !this.selectedFile.file.name.endsWith(".jpg")){
+      alert("La imagen debe ser formato png o jpg");
     }
     else{
       this.postService.addPost(this.User_name, this.descipcion , this.selectedFile.file);
@@ -75,10 +79,15 @@ export class CrearPublicacionComponent implements OnInit {
     else{
       if(this.urlImg != undefined)
         this.postService.updatePost(this.post.id , this.User_name, this.descipcion , this.urlImg);
-      else
+      else if(!this.selectedFile.file.name.endsWith(".png") && !this.selectedFile.file.name.endsWith(".jpg")){
+        alert("La imagen debe ser formato png o jpg");
+      }
+      else{
         this.postService.updatePost(this.post.id , this.User_name, this.descipcion , this.selectedFile.file);
-      alert("Se actualizó la publicación.");
-      this.dialogRef.close();
+        alert("Se actualizó la publicación.");
+        this.dialogRef.close();
+      } 
+      
     }
 
   }
