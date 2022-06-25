@@ -1,11 +1,14 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-
 import { User } from "../models/user.model";
 import { Subject } from "rxjs";
 import { Router } from "@angular/router";
 import { SignupComponent } from "../signup/signup.component";
 import { MatDialog } from "@angular/material/dialog";
+import { environment } from "../../environments/environment";
+
+const BACKEND_URL = environment.apiUrl + "/user/";
+
 
 @Injectable({ providedIn: 'root'})
 export class UsersService {
@@ -37,7 +40,7 @@ export class UsersService {
   createUser(email: string, password: string , username : string) {
     const userData: User = {email:email, password: password , username: username } 
     this.http
-    .post<{}>("http://localhost:3000/api/user/signup", userData)
+    .post<{}>(BACKEND_URL + "signup", userData)
     .subscribe( response => {
         console.log(response);
         alert("El usuario se creo correctamente")
@@ -56,7 +59,7 @@ export class UsersService {
       email: string;
       password: string;
       username : string;
-    }>("http://localhost:3000/api/user/" + this.userId);
+    }>(BACKEND_URL + this.userId);
   }
 
 
@@ -64,7 +67,7 @@ export class UsersService {
     const userData: User = { email: email, password: password  , username: ""};
     this.http
       .post<{ token: string; expiresIn: number; userId: string }>(
-        "http://localhost:3000/api/user/login",
+        BACKEND_URL + "login",
         userData
       )
       .subscribe(response => {
