@@ -45,7 +45,7 @@ export class UsersService {
       }, 
       err=>{
         console.log(err);
-        alert("El email ya esta en uso")
+        alert("El email ya está en uso")
       }
       );
   }
