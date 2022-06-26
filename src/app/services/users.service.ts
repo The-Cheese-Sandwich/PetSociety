@@ -96,7 +96,7 @@ export class UsersService {
     this.authStatusListener.next(false);
     clearTimeout(this.tokenTimer);
     this.clearAuthData();
-    this.router.navigate(["/"]);
+    this.router.navigate(["login"]);
   }
 
   autoAuthUser() {
