@@ -43,7 +43,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   logout(){
-    this.router.navigate(['login']);
+    this.userService.logout();
   }
 
   opbutton(){

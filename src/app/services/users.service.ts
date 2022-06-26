@@ -48,7 +48,7 @@ export class UsersService {
       }, 
       err=>{
         console.log(err);
-        alert("El email ya esta en uso")
+        alert("El email ya está en uso")
       }
       );
   }
@@ -99,7 +99,7 @@ export class UsersService {
     this.authStatusListener.next(false);
     clearTimeout(this.tokenTimer);
     this.clearAuthData();
-    this.router.navigate(["/"]);
+    this.router.navigate(["login"]);
   }
 
   autoAuthUser() {
