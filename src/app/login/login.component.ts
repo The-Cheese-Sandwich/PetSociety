@@ -36,7 +36,7 @@ constructor(private router: Router, public dialog: MatDialog, public userService
   onLogin(form: NgForm) {
   
     if (form.invalid) {
-      alert("Asegurese de llenar todos los capos");
+      alert("Asegúrese de llenar todos los campos");
     } else if (this.verificacion(form.value.password)){
       alert("Contraseña o correo invalido");
     } else { 
