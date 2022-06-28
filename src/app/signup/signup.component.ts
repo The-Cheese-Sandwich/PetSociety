@@ -26,13 +26,31 @@ export class SignupComponent implements OnInit {
     }
     else if (!this.verificacion(form.value.password)){
       var element = document.getElementById('pss');
-      element.classList.toggle('hide');
+      if ( element.classList.contains("hide") ){
+        element.classList.toggle('hide');
+      }
     }    
     else if(form.value.password != form.value.confirmPassword){
+      var element1 = document.getElementById('pss');
+      if ( !element1.classList.contains("hide") ){
+        element1.classList.toggle('hide');
+      }
       var element = document.getElementById('cpss');
-      element.classList.toggle('hide');
+      if ( element.classList.contains("hide") ){
+        element.classList.toggle('hide');
+      }
     }
     else{
+
+      var element1 = document.getElementById('pss');
+      if ( !element1.classList.contains("hide") ){
+        element1.classList.toggle('hide');
+      }
+      var element = document.getElementById('cpss');
+      if ( !element.classList.contains("hide") ){
+        element.classList.toggle('hide');
+      }
+
       this.userService.createUser(form.value.email, form.value.password, form.value.username);
     }
   }
